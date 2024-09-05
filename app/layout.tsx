@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+
+import bookmark from '../public/logo-bookmark.svg';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Multistep",
-  description: "A multistep form for accepting user data",
+  title: "Bookmark",
+  description: "A bookmarking website",
 };
 
 export default function RootLayout({
@@ -17,8 +20,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} flex justify-center content-center md:mt-[4%] font-["ubuntu"]`}>
-        <main className="flex flex-col md:flex-row md:justify-center md:w-[60vw] md:h-full md:mx-[auto] md:mt-[4%] md:bg-white md:rounded-lg w-full">
+      <body className={`${inter.className} text-black font-[ubuntu]`}>
+        <header className="flex items-center mx-[5%] my-8 gap-12 mb-48">
+          <a><Image src={bookmark} width={150} height={150} alt="logo"></Image></a>
+          <a className="ml-[auto]">FEATURES</a>
+          <a>PRICES</a>
+          <a>CONTACT</a>
+          <button className="bg-red-500 p-1 px-4 text-white rounded font-bold">LOGIN</button>
+        </header>
+        <main>
         { children }
         </main>
       </body>
