@@ -16,8 +16,6 @@ import error from '../public/icon-error.svg';
 import twitter from '../public/icon-twitter.svg';
 import facebook from '../public/icon-facebook.svg';
 
-
-
 export default function Home() {
 
   const [feature, setActiveFeature] = useState('simple');
